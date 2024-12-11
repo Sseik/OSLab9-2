@@ -1,13 +1,3 @@
-﻿  functions.cpp
-C:\Code\OS\Lab9\OSLab9-2\Server\functions.cpp(27,12): warning C4267: 'initializing': conversion from 'size_t' to 'int', possible loss of data
-C:\Code\OS\Lab9\OSLab9-2\Server\functions.cpp(44,10): warning C4267: 'initializing': conversion from 'size_t' to 'int', possible loss of data
-C:\Code\OS\Lab9\OSLab9-2\Server\functions.cpp(62,25): warning C4477: 'snprintf' : format string '%ld' requires an argument of type 'long', but variadic argument 1 has type '__int64'
-      C:\Code\OS\Lab9\OSLab9-2\Server\functions.cpp(62,25):
-      consider using '%lld' in the format string
-      C:\Code\OS\Lab9\OSLab9-2\Server\functions.cpp(62,25):
-      consider using '%Id' in the format string
-      C:\Code\OS\Lab9\OSLab9-2\Server\functions.cpp(62,25):
-      consider using '%I64d' in the format string
-  
-C:\Code\OS\Lab9\OSLab9-2\Server\functions.cpp(64,20): warning C4267: 'initializing': conversion from 'size_t' to 'int', possible loss of data
-  Server.vcxproj -> C:\Code\OS\Lab9\OSLab9-2\Server\x64\Debug\Server.exe
+﻿  Server.cpp
+C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.41.34120\include\semaphore(16): warning STL4038: The contents of <semaphore> are available only with C++20 or later.
+  Server.vcxproj -> D:\!P0l1T3cHn1kx\3sem\os\osLab9\Server\x64\Debug\Server.exe

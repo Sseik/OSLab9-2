@@ -35,12 +35,12 @@ DirectoryInfo FindInformation(string& directory) {
 }
 
 // Format: "C:/path|type"
-void GetRequest(string& directory, string& type, HANDLE hPipe) {
+void GetRequest(string& directory, string& type, HANDLE hPipe, int clientId) {
 	unsigned long bytesRead;
 	char buffer[500];
 	ReadFile(hPipe, buffer, 500, &bytesRead, NULL);
 	string sBuffer(buffer);
-	std::cout << sBuffer << std::endl;
+	std::cout << "Client with ID: " << clientId << " typed: " << sBuffer << std::endl;
 	int pos = sBuffer.rfind('|');
 	if (pos != string::npos) {
 		type = sBuffer.substr(pos + 1);
@@ -55,11 +55,16 @@ void GetRequest(string& directory, string& type, HANDLE hPipe) {
 // Type is either a word "folder" or an extension (".txt")
 void SendInfo(string& directory, string& type, HANDLE hPipe) {
 	cache[directory] = FindInformation(directory);
-	char buffer[1000] = "Number of files: ";
+	std::cout << "Sent:\n";
+	char buffer[1000] = "Number of files in: ";
+	snprintf(buffer, sizeof(buffer), "Number of files in %s: ", directory.c_str());
+	printf("Number of files in %s: ", directory.c_str());
 	WriteFile(hPipe, buffer, sizeof(buffer), NULL, NULL);
 	snprintf(buffer, 1000, "%d\n", cache[directory].quantity);
+	std::cout << buffer;
 	WriteFile(hPipe, buffer, sizeof(buffer), NULL, NULL);
-	snprintf(buffer, 1000, "Summary size of FILES: %ld\n", cache[directory].size);
+	snprintf(buffer, 1000, "Summary size of FILES: %ld bytes\n", cache[directory].size);
+	std::cout << buffer;
 	WriteFile(hPipe, buffer, sizeof(buffer), NULL, NULL);
 	for (int i = 0, n = cache[directory].files.size(); i < n; i++) {
 		if (cache[directory].files[i].type == type || type == ".*") {
@@ -67,8 +72,10 @@ void SendInfo(string& directory, string& type, HANDLE hPipe) {
 			FileTimeToSystemTime(&cache[directory].files[i].creationTime, &stUTC);
 			SystemTimeToTzSpecificLocalTime(NULL, &stUTC, &stLocal);
 			snprintf(buffer, 1000, "%s %hd-%hd-%hd-%hd-%hd\n", cache[directory].files[i].name.c_str(), stLocal.wYear, stLocal.wMonth, stLocal.wDay, stLocal.wHour, stLocal.wMinute);
+			std::cout << buffer;
 			WriteFile(hPipe, buffer, sizeof(buffer), NULL, NULL);
 		}
+		
 	}
 	FlushFileBuffers(hPipe);
 }
