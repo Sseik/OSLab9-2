@@ -3,12 +3,12 @@
   "WorkspaceRootPath": "C:\\Code\\OS\\Lab9\\OSLab9-2\\Server\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{7F56F981-E8B8-484D-8A68-189865134F9D}|Server.vcxproj|C:\\Code\\OS\\Lab9\\OSLab9-2\\Server\\Server.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
-      "RelativeMoniker": "D:0:0:{7F56F981-E8B8-484D-8A68-189865134F9D}|Server.vcxproj|solutionrelative:Server.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{7F56F981-E8B8-484D-8A68-189865134F9D}|Server.vcxproj|C:\\Code\\OS\\Lab9\\OSLab9-2\\Server\\functions.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
       "RelativeMoniker": "D:0:0:{7F56F981-E8B8-484D-8A68-189865134F9D}|Server.vcxproj|solutionrelative:functions.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{7F56F981-E8B8-484D-8A68-189865134F9D}|Server.vcxproj|C:\\Code\\OS\\Lab9\\OSLab9-2\\Server\\Server.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{7F56F981-E8B8-484D-8A68-189865134F9D}|Server.vcxproj|solutionrelative:Server.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{7F56F981-E8B8-484D-8A68-189865134F9D}|Server.vcxproj|C:\\Code\\OS\\Lab9\\OSLab9-2\\Server\\functions.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
@@ -22,17 +22,17 @@
       "DocumentGroups": [
         {
           "DockedHeight": 320,
-          "SelectedChildIndex": 2,
+          "SelectedChildIndex": 0,
           "Children": [
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 0,
               "Title": "functions.cpp",
               "DocumentMoniker": "C:\\Code\\OS\\Lab9\\OSLab9-2\\Server\\functions.cpp",
               "RelativeDocumentMoniker": "functions.cpp",
               "ToolTip": "C:\\Code\\OS\\Lab9\\OSLab9-2\\Server\\functions.cpp",
               "RelativeToolTip": "functions.cpp",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAADMAAAACAAAAAAAAAA==",
+              "ViewState": "AgIAADYAAAAAAAAAAAAAAEQAAAB9AAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
               "WhenOpened": "2024-12-10T14:09:00.721Z",
               "EditorCaption": ""
@@ -47,12 +47,11 @@
               "RelativeToolTip": "functions.h",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAABsAAAA9AAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
-              "WhenOpened": "2024-12-10T14:08:48.13Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-12-10T14:08:48.13Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
+              "DocumentIndex": 1,
               "Title": "Server.cpp",
               "DocumentMoniker": "C:\\Code\\OS\\Lab9\\OSLab9-2\\Server\\Server.cpp",
               "RelativeDocumentMoniker": "Server.cpp",

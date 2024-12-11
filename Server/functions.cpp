@@ -66,7 +66,7 @@ void SendInfo(string& directory, string& type, HANDLE hPipe) {
 			SYSTEMTIME stUTC, stLocal;
 			FileTimeToSystemTime(&cache[directory].files[i].creationTime, &stUTC);
 			SystemTimeToTzSpecificLocalTime(NULL, &stUTC, &stLocal);
-			snprintf(buffer, 1000, "%s %hd-%hd-%hd-%hd\n", cache[directory].files[i].name.c_str(), stLocal.wYear, stLocal.wDay, stLocal.wHour, stLocal.wMinute);
+			snprintf(buffer, 1000, "%s %hd-%hd-%hd-%hd-%hd\n", cache[directory].files[i].name.c_str(), stLocal.wYear, stLocal.wMonth, stLocal.wDay, stLocal.wHour, stLocal.wMinute);
 			WriteFile(hPipe, buffer, sizeof(buffer), NULL, NULL);
 		}
 	}
