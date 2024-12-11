@@ -1,3 +1,1 @@
-﻿  Server.cpp
-C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.41.34120\include\semaphore(16): warning STL4038: The contents of <semaphore> are available only with C++20 or later.
-  Server.vcxproj -> D:\!P0l1T3cHn1kx\3sem\os\osLab9\Server\x64\Debug\Server.exe
+﻿  Server.vcxproj -> C:\Code\OS\Lab9\OSLab9-2\Server\x64\Debug\Server.exe

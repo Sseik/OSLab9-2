@@ -9,7 +9,7 @@ map<string, DirectoryInfo> cache;
 // Usage: cache[directory] = FindInformation[directory];
 DirectoryInfo FindInformation(string& directory) {
 	time_t now = time(NULL);
-	// Повертаємо інформацію з кешу, якщо попередньому запису не більше MAX_TIME секунд
+	// пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅ пїЅпїЅпїЅпїЅ, пїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅ пїЅпїЅпїЅпїЅпїЅ MAX_TIME пїЅпїЅпїЅпїЅпїЅпїЅ
 	if (cache.count(directory) && now - cache[directory].searchTime <= MAX_TIME)
 		return cache[directory];
 	DirectoryInfo res = {};
@@ -63,7 +63,7 @@ void SendInfo(string& directory, string& type, HANDLE hPipe) {
 	snprintf(buffer, 1000, "%d\n", cache[directory].quantity);
 	std::cout << buffer;
 	WriteFile(hPipe, buffer, sizeof(buffer), NULL, NULL);
-	snprintf(buffer, 1000, "Summary size of FILES: %ld bytes\n", cache[directory].size);
+	snprintf(buffer, 1000, "Summary size of FILES: %ld\n", cache[directory].size);
 	std::cout << buffer;
 	WriteFile(hPipe, buffer, sizeof(buffer), NULL, NULL);
 	for (int i = 0, n = cache[directory].files.size(); i < n; i++) {
