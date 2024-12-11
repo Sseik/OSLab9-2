@@ -24,3 +24,5 @@ typedef struct SDirectoryInfo {
 } DirectoryInfo;
 
 DirectoryInfo FindInformation(string& directory);
+void GetRequest(string& directory, string& type, HANDLE hPipe);
+void SendInfo(string& directory, string& type, HANDLE hPipe);

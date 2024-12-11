@@ -6,6 +6,7 @@
 
 map<string, DirectoryInfo> cache;
 
+// Usage: cache[directory] = FindInformation[directory];
 DirectoryInfo FindInformation(string& directory) {
 	time_t now = time(NULL);
 	// Повертаємо інформацію з кешу, якщо попередньому запису не більше MAX_TIME секунд
@@ -31,4 +32,43 @@ DirectoryInfo FindInformation(string& directory) {
 		} while (FindNextFileA(h, &fileInfo));
 	}
 	return res;
+}
+
+// Format: "C:/path|type"
+void GetRequest(string& directory, string& type, HANDLE hPipe) {
+	unsigned long bytesRead;
+	char buffer[500];
+	ReadFile(hPipe, buffer, 500, &bytesRead, NULL);
+	string sBuffer(buffer);
+	std::cout << sBuffer << std::endl;
+	int pos = sBuffer.rfind('|');
+	if (pos != string::npos) {
+		type = sBuffer.substr(pos + 1);
+		directory = string(sBuffer, 0, pos);
+	}
+	else {
+		directory = sBuffer;
+		type = ".*";
+	}
+}
+
+// Type is either a word "folder" or an extension (".txt")
+void SendInfo(string& directory, string& type, HANDLE hPipe) {
+	cache[directory] = FindInformation(directory);
+	char buffer[1000] = "Number of files: ";
+	WriteFile(hPipe, buffer, sizeof(buffer), NULL, NULL);
+	snprintf(buffer, 1000, "%d\n", cache[directory].quantity);
+	WriteFile(hPipe, buffer, sizeof(buffer), NULL, NULL);
+	snprintf(buffer, 1000, "Summary size of FILES: %ld\n", cache[directory].size);
+	WriteFile(hPipe, buffer, sizeof(buffer), NULL, NULL);
+	for (int i = 0, n = cache[directory].files.size(); i < n; i++) {
+		if (cache[directory].files[i].type == type || type == ".*") {
+			SYSTEMTIME stUTC, stLocal;
+			FileTimeToSystemTime(&cache[directory].files[i].creationTime, &stUTC);
+			SystemTimeToTzSpecificLocalTime(NULL, &stUTC, &stLocal);
+			snprintf(buffer, 1000, "%s %hd-%hd-%hd-%hd\n", cache[directory].files[i].name.c_str(), stLocal.wYear, stLocal.wDay, stLocal.wHour, stLocal.wMinute);
+			WriteFile(hPipe, buffer, sizeof(buffer), NULL, NULL);
+		}
+	}
+	FlushFileBuffers(hPipe);
 }

@@ -1,0 +1,37 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "C:\\Code\\OS\\Lab9\\OSLab9-2\\TestClient\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{8E913C81-FA4F-43BF-9C74-ED01C0FE422E}|TestClient.vcxproj|C:\\Code\\OS\\Lab9\\OSLab9-2\\TestClient\\TestClient.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{8E913C81-FA4F-43BF-9C74-ED01C0FE422E}|TestClient.vcxproj|solutionrelative:TestClient.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 1,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedHeight": 320,
+          "SelectedChildIndex": 0,
+          "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "TestClient.cpp",
+              "DocumentMoniker": "C:\\Code\\OS\\Lab9\\OSLab9-2\\TestClient\\TestClient.cpp",
+              "RelativeDocumentMoniker": "TestClient.cpp",
+              "ToolTip": "C:\\Code\\OS\\Lab9\\OSLab9-2\\TestClient\\TestClient.cpp",
+              "RelativeToolTip": "TestClient.cpp",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAgAAAAqAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
+              "WhenOpened": "2024-12-11T12:06:03.517Z",
+              "EditorCaption": ""
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
