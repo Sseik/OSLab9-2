@@ -4,6 +4,7 @@
 #include <vector>
 #include <Windows.h>
 #include <time.h>
+#include <ctime>
 
 using std::string;
 using std::map;
@@ -23,6 +24,6 @@ typedef struct SDirectoryInfo {
 
 } DirectoryInfo;
 
-DirectoryInfo FindInformation(string& directory);
-void GetRequest(string& directory, string& type, HANDLE hPipe);
+DirectoryInfo FindInformation(const std::string& directory);
+void GetRequest(string& directory, string& type, HANDLE hPipe,int clientId);
 void SendInfo(string& directory, string& type, HANDLE hPipe);
