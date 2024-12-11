@@ -1,4 +1,2 @@
-﻿  functions.cpp
-C:\Code\OS\Lab9\OSLab9-2\Server\functions.cpp(23,84): warning C4554: '<<': check operator precedence for possible error; use parentheses to clarify precedence
-C:\Code\OS\Lab9\OSLab9-2\Server\functions.cpp(25,12): warning C4267: 'initializing': conversion from 'size_t' to 'int', possible loss of data
+﻿  Server.cpp
   Server.vcxproj -> C:\Code\OS\Lab9\OSLab9-2\Server\x64\Debug\Server.exe

@@ -18,7 +18,7 @@ typedef struct SFileInfo {
 typedef struct SDirectoryInfo {
 	int quantity;
 	time_t searchTime;
-	double size;
+	long long size; //sum of sizes of files in the folder, internal folders not included
 	vector<FileInfo> files;
 
 } DirectoryInfo;

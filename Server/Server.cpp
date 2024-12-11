@@ -5,13 +5,14 @@ using std::cout;
 using std::endl;
 
 int main() {
-    string directory = "C:/Code/OS/Lab9/OSLab9-2/Server";
+    // Testing FindInformation function
+    /*string directory = "C:/Code/OS/Lab9/OSLab9-2/Server";
     DirectoryInfo di = FindInformation(directory);
     cout << di.quantity << endl;
-    //cout << di.searchTime << endl;
+    cout << di.size << endl;
     for (int i = di.files.size() - 1; i >= 0; i--) {
         cout << di.files[i].name << endl;
         cout << di.files[i].type << endl;
-    }
+    }*/
     return 0;
 }
