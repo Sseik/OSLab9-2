@@ -90,14 +90,14 @@ public class EnhancedFileClient {
                 super.paintComponent(g2d);
             }
         };
-        sendButton.setForeground(Color.WHITE);
         sendButton.setOpaque(false);
         sendButton.setBorderPainted(false);
+        sendButton.setContentAreaFilled(false);
+        sendButton.setForeground(Color.WHITE);        
         gbc.gridx = 0;
         gbc.gridy = 2;
         gbc.gridwidth = 2;
         inputPanel.add(sendButton, gbc);
-
         sendButton.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
